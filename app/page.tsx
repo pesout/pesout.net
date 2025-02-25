@@ -3,6 +3,7 @@ import Aurora from "@/src/Backgrounds/Aurora/Aurora";
 import SkillRow from "./components/SkillRow";
 import ProjectRow from "./components/ProjectRow";
 import FileButton from "./components/FileButton";
+import ExtLink from "./components/ExtLink";
 
 const Home: React.FC = () => {
   return (
@@ -13,18 +14,19 @@ const Home: React.FC = () => {
           speed={0.6}
         />
       </div>
-      <header className="relative z-10 mt-[9vh] text-center">
+      <header className="flex items-center justify-center relative z-10 h-64 pt-3 text-center">
         <h1 className="text-6xl px-4 monospace font-medium leading-[1.15]">Štěpán Pešout</h1>
       </header>
-      <main className="relative z-10 container max-w-screen-md mx-auto px-4 mt-10">
+      <main className="relative z-10 container max-w-screen-md mx-auto px-4 pb-8">
         <h2 className="text-2xl mb-2">About me</h2>
         <p className="text-l text-justify leading-6">
           I&apos;m a fullstack web app developer, freelancer, machine learning enthusiast, traveller and
           technology minimalist currently living, working and studying in Prague, Czech Republic.
         </p>
 
+
         <h2 className="text-2xl mb-2 mt-6">Technology skills</h2>
-        <div className="text-l leading-6">
+        <div className="leading-6">
           <SkillRow skill="NodeJS" percentage={85}>
             <p>
               Lately, I have mainly been working with <strong>NestJS</strong> framework.
@@ -66,7 +68,9 @@ const Home: React.FC = () => {
           </SkillRow>
         </div>
 
+
         <h2 className="text-2xl mb-2 mt-5">Personal projects</h2>
+        <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <ProjectRow name={(<img src="/images/rcd_logo.png" alt="Recordica logo" className="w-[7rem] mt-0.5" />)}>
             <p>
@@ -155,21 +159,62 @@ const Home: React.FC = () => {
               <FileButton type="github" href="https://github.com/pesout" gap>GitHub</FileButton>
             </p>
           </ProjectRow>
+        </div>
+
 
         <h2 className="text-2xl mb-2 mt-5">Projects I have contributed to</h2>
         <p className="text-l text-justify leading-6 mb-2">
           Unfortunately, not all the projects I have participated in can be published here. I have worked on internal
           applications for various companies and some projects are still in progress.
         </p>
-        <ProjectRow name="Robe websites" color="emerald">
-          <p>
-            Appio, frontend, PM
-          </p>
-          <p className="mt-2">
-            <FileButton type="web" href="https://www.robe.cz" color="emerald" gap>Robe.cz</FileButton>
-          </p>
-        </ProjectRow>
+        <div>
+          <ProjectRow name="Robe websites" color="emerald">
+            <p>
+              I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
+              where I was involved in frontend development (NextJS) and also managed it from a project management perspective. 
+            </p>
+            <p className="mt-2">
+              <FileButton type="web" href="https://www.robe.cz" color="emerald" gap>Robe.cz</FileButton>
+              <FileButton type="web" href="https://www.robemerch.com" color="emerald">RobeMerch.com</FileButton>
+            </p>
+          </ProjectRow>
+          <ProjectRow name="KineDok" color="emerald">
+            <p>
+              I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
+              where I was involved mainly in frontend (NextJS) development. 
+            </p>
+            <p className="mt-2">
+              <FileButton type="web" href="https://www.kinedok.net" color="emerald">KineDok.net</FileButton>
+            </p>
+          </ProjectRow>
+          <ProjectRow name="Future Bakers" color="emerald">
+            <p>
+              I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
+              where I was involved mainly in backend and frontend development (PHP, Symfony, Twig).
+            </p>
+            <p className="mt-2">
+              <FileButton type="web" href="https://futurebakers.com" color="emerald">FutureBakers.com</FileButton>
+            </p>
+          </ProjectRow>
+        </div>
 
+
+        <h2 className="text-2xl mb-2 mt-5">My travels</h2>
+        <p className="text-l text-justify leading-6 mb-2">
+          In addition to many small trips and a study internship in Portugal, in mid-2024 I went on an eight-month trip to
+          Latin America, mainly to Argentina and Chile. You can watch
+          our <ExtLink href="https://www.youtube.com/@jsmenatripu?sub_confirmation=1" color="cyan">YouTube videos</ExtLink> (in&nbsp;Czech)
+          that document this journey. I have also
+          written <ExtLink href="https://easter-island.pesout.net" color="cyan">a practical travel guide to Easter Island</ExtLink>.
+        </p>
+
+
+        <h2 className="text-2xl mb-2 mt-6">Contact</h2>
+        <p className="text-l text-justify leading-6 mb-2">
+          You can email me
+          at <strong dangerouslySetInnerHTML={{ __html: "stepan<!-- antispam-->@<!-- antispam-->pesout<!-- antispam-->.net" }}></strong> or
+          connect with me on <ExtLink href="https://www.linkedin.com/in/stepanpesout" color="cyan">LinkedIn</ExtLink>. 
+        </p>
       </main>
     </div>
   );
