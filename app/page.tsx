@@ -24,7 +24,7 @@ const Home: React.FC = () => (
       <main className="relative z-10 container max-w-screen-md mx-auto px-4">
       {/* <main className="relative z-10 container max-w-screen-md mx-auto px-4 pb-8"> */}
         <h2 className="text-2xl mb-2 monospace">About me</h2>
-        <p className="text-lg text-justify leading-6">
+        <p className="text-md md:text-lg text-justify leading-6">
           I&apos;m a fullstack web app developer, freelancer, machine learning enthusiast, traveller and
           technology minimalist currently living, working and studying in Prague, Czech Republic.
         </p>
@@ -168,7 +168,7 @@ const Home: React.FC = () => (
 
 
         <h2 className="text-2xl mb-2 mt-5 monospace">Projects I contributed to</h2>
-        <p className="text-lg text-justify leading-6 mb-2">
+        <p className="text-md md:text-lg text-justify leading-6 mb-2">
           Unfortunately, not all the projects I have participated in can be published here. I have worked on internal
           applications for various companies and some projects are still in progress.
         </p>
@@ -205,7 +205,7 @@ const Home: React.FC = () => (
 
 
         <h2 className="text-2xl mb-2 mt-5 monospace">My travels</h2>
-        <p className="text-lg text-justify leading-6 mb-2">
+        <p className="text-md md:text-lg text-justify leading-6 mb-2">
           In addition to many small trips and a study internship in Portugal, in mid-2024 I went on an eight-month trip to
           Latin America, mainly to Argentina and Chile. You can watch
           our <ExtLink href="https://www.youtube.com/@jsmenatripu?sub_confirmation=1" color="cyan">YouTube videos</ExtLink> (in&nbsp;Czech)
@@ -215,7 +215,7 @@ const Home: React.FC = () => (
 
 
         <h2 className="text-2xl mb-2 mt-6 monospace">Contact</h2>
-        <p className="text-lg text-justify leading-6">
+        <p className="text-md md:text-lg text-justify leading-6">
           You can email me
           at <strong dangerouslySetInnerHTML={{ __html: "stepan<!-- antispam-->@<!-- antispam-->pesout<!-- antispam-->.net" }}></strong> or
           connect with me on <ExtLink href="https://www.linkedin.com/in/stepanpesout" color="cyan">LinkedIn</ExtLink>.
