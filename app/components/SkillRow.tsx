@@ -6,7 +6,7 @@ const SkillRow: React.FC<SkillRowType> = ({ skill, percentage, children }) => {
   return (
     <>
       <div className="flex items-center cursor-pointer group mb-1" onClick={() => setIsOpen(!isOpen)}>
-        <span className="w-24 font-medium monospace">
+        <span className="w-24 font-medium text-lg monospace">
           <KeyboardArrowDownIcon className={`-ms-1 -mt-1 ${isOpen && "rotate-180"}`} />
           {skill}
         </span>
@@ -17,10 +17,10 @@ const SkillRow: React.FC<SkillRowType> = ({ skill, percentage, children }) => {
       </div>
       <div
         className={`overflow-hidden transition-all duration-200 ${
-          isOpen ? "max-h-40 opacity-100 mt-1.5 mb-3 ms-0.5" : "max-h-0 opacity-0"
+          isOpen ? "max-h-40 opacity-100 mt-1.5 mb-3" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="text-sm italic">{children}</div>
+        <div className="text-md italic ms-2">{children}</div>
       </div>
     </>
   );

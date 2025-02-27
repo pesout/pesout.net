@@ -4,28 +4,33 @@ import SkillRow from "./components/SkillRow";
 import ProjectRow from "./components/ProjectRow";
 import FileButton from "./components/FileButton";
 import ExtLink from "./components/ExtLink";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import IconLink from "./components/IconLink";
 
-const Home: React.FC = () => {
-  return (
-    <div>
-      <div className="h-[35vh] w-screen absolute top-0 left-0 bg-black">
+const Home: React.FC = () => (
+  <div className="flex flex-col min-h-screen">
+    <div className="flex-1">
+      <div className="h-96 w-screen absolute top-0 left-0 bg-black">
         <Aurora
           colorStops={["#D500F9", "#3D5AFE", "#00E5FF"]}
-          speed={0.6}
-        />
+          speed={0.7} />
       </div>
+
       <header className="flex items-center justify-center relative z-10 h-64 pt-3 text-center">
-        <h1 className="text-6xl px-4 monospace font-medium leading-[1.15]">Štěpán Pešout</h1>
+        <h1 className="text-6xl px-10 monospace font-medium leading-[1.15]">Štěpán Pešout</h1>
       </header>
-      <main className="relative z-10 container max-w-screen-md mx-auto px-4 pb-8">
-        <h2 className="text-2xl mb-2">About me</h2>
-        <p className="text-l text-justify leading-6">
+    
+      <main className="relative z-10 container max-w-screen-md mx-auto px-4">
+      {/* <main className="relative z-10 container max-w-screen-md mx-auto px-4 pb-8"> */}
+        <h2 className="text-2xl mb-2 monospace">About me</h2>
+        <p className="text-lg text-justify leading-6">
           I&apos;m a fullstack web app developer, freelancer, machine learning enthusiast, traveller and
           technology minimalist currently living, working and studying in Prague, Czech Republic.
         </p>
 
 
-        <h2 className="text-2xl mb-2 mt-6">Technology skills</h2>
+        <h2 className="text-2xl mb-2 mt-6 monospace">Technology skills</h2>
         <div className="leading-6">
           <SkillRow skill="NodeJS" percentage={85}>
             <p>
@@ -69,7 +74,7 @@ const Home: React.FC = () => {
         </div>
 
 
-        <h2 className="text-2xl mb-2 mt-5">Personal projects</h2>
+        <h2 className="text-2xl mb-2 mt-5 monospace">Personal projects</h2>
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <ProjectRow name={(<img src="/images/rcd_logo.png" alt="Recordica logo" className="w-[7rem] mt-0.5" />)}>
@@ -95,7 +100,7 @@ const Home: React.FC = () => {
             <p className="mt-2">
               <FileButton type="github" href="https://github.com/pesout/master-thesis" gap>GitHub</FileButton>
               <FileButton href="/projects/psychedelic-ml-models.html" gap>HTML</FileButton>
-              <FileButton href="/projects/diplomova_prace.pdf">PDF (Czech)</FileButton>
+              <FileButton href="/projects/diplomova_prace.pdf">PDF (CZ)</FileButton>
             </p>
           </ProjectRow>
           <ProjectRow name="Regression compressor">
@@ -136,12 +141,12 @@ const Home: React.FC = () => {
             </p>
             <p className="mt-2">
               <FileButton type="github" href="https://github.com/pesout/bakalarska-prace" gap>GitHub</FileButton>
-              <FileButton href="/projects/bakalarska_prace.pdf">PDF (Czech)</FileButton>
+              <FileButton href="/projects/bakalarska_prace.pdf">PDF (CZ)</FileButton>
             </p>
           </ProjectRow>
           <ProjectRow name="Classifier of handwritten digits">
             <p>
-              The classifier utilizing convolutional neural networks was presented at a workshop of 
+              The classifier utilizing convolutional neural networks was presented at a workshop of
               the <strong>AI Bridge</strong> initiative at the Czech University of Life Sciences. I also created
               a simple web app working with camera images as a practical example of using an exported prediction model.
             </p>
@@ -162,8 +167,8 @@ const Home: React.FC = () => {
         </div>
 
 
-        <h2 className="text-2xl mb-2 mt-5">Projects I have contributed to</h2>
-        <p className="text-l text-justify leading-6 mb-2">
+        <h2 className="text-2xl mb-2 mt-5 monospace">Projects I contributed to</h2>
+        <p className="text-lg text-justify leading-6 mb-2">
           Unfortunately, not all the projects I have participated in can be published here. I have worked on internal
           applications for various companies and some projects are still in progress.
         </p>
@@ -171,7 +176,7 @@ const Home: React.FC = () => {
           <ProjectRow name="Robe websites" color="emerald">
             <p>
               I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
-              where I was involved in frontend development (NextJS) and also managed it from a project management perspective. 
+              where I was involved in frontend development (NextJS) and also managed it from a project management perspective.
             </p>
             <p className="mt-2">
               <FileButton type="web" href="https://www.robe.cz" color="emerald" gap>Robe.cz</FileButton>
@@ -181,7 +186,7 @@ const Home: React.FC = () => {
           <ProjectRow name="KineDok" color="emerald">
             <p>
               I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
-              where I was involved mainly in frontend (NextJS) development. 
+              where I was involved mainly in frontend (NextJS) development.
             </p>
             <p className="mt-2">
               <FileButton type="web" href="https://www.kinedok.net" color="emerald">KineDok.net</FileButton>
@@ -199,8 +204,8 @@ const Home: React.FC = () => {
         </div>
 
 
-        <h2 className="text-2xl mb-2 mt-5">My travels</h2>
-        <p className="text-l text-justify leading-6 mb-2">
+        <h2 className="text-2xl mb-2 mt-5 monospace">My travels</h2>
+        <p className="text-lg text-justify leading-6 mb-2">
           In addition to many small trips and a study internship in Portugal, in mid-2024 I went on an eight-month trip to
           Latin America, mainly to Argentina and Chile. You can watch
           our <ExtLink href="https://www.youtube.com/@jsmenatripu?sub_confirmation=1" color="cyan">YouTube videos</ExtLink> (in&nbsp;Czech)
@@ -209,15 +214,25 @@ const Home: React.FC = () => {
         </p>
 
 
-        <h2 className="text-2xl mb-2 mt-6">Contact</h2>
-        <p className="text-l text-justify leading-6 mb-2">
+        <h2 className="text-2xl mb-2 mt-6 monospace">Contact</h2>
+        <p className="text-lg text-justify leading-6">
           You can email me
           at <strong dangerouslySetInnerHTML={{ __html: "stepan<!-- antispam-->@<!-- antispam-->pesout<!-- antispam-->.net" }}></strong> or
-          connect with me on <ExtLink href="https://www.linkedin.com/in/stepanpesout" color="cyan">LinkedIn</ExtLink>. 
+          connect with me on <ExtLink href="https://www.linkedin.com/in/stepanpesout" color="cyan">LinkedIn</ExtLink>.
         </p>
       </main>
+      <footer className="fixed right-0 bottom-0 z-10 hidden lg:flex flex-col gap-3 pb-10 pe-10">
+        <IconLink href="https://github.com/pesout"><GitHubIcon fontSize="inherit" /></IconLink>
+        <IconLink href="https://www.linkedin.com/in/stepanpesout/"><LinkedInIcon fontSize="inherit" /></IconLink>
+      </footer>
     </div>
-  );
-}
+    <div className="h-32 -mt-9 rotate-180 w-screen bg-black">
+      <Aurora
+          colorStops={["#006064", "#006064", "#006064"]}
+          speed={0.4}
+      />
+    </div>
+  </div>
+)
 
 export default Home;
