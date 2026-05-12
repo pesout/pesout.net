@@ -25,14 +25,14 @@ const Home: React.FC = () => (
       {/* <main className="relative z-10 container max-w-screen-md mx-auto px-4 pb-8"> */}
         <h2 className="text-2xl mb-2 monospace">About me</h2>
         <p className="text-md md:text-lg text-justify leading-6">
-          I&apos;m a fullstack web app developer, freelancer, machine learning enthusiast, traveller and
-          technology minimalist currently living, working and studying in Prague, Czech Republic.
+          I&apos;m a solution architect and fullstack developer, freelancer, machine learning enthusiast,
+          university lecturer, traveller and technology minimalist currently living,
+          working and studying in Prague, Czech Republic.
         </p>
-
 
         <h2 className="text-2xl mb-2 mt-6 monospace">Technology skills</h2>
         <div className="leading-6">
-          <SkillRow skill="NodeJS" percentage={85}>
+          <SkillRow skill="NodeJS" percentage={90}>
             <p>
               Lately, I have mainly been working with <strong>NestJS</strong> framework.
             </p>
@@ -45,8 +45,9 @@ const Home: React.FC = () => (
           </SkillRow>
           <SkillRow skill="PHP" percentage={100}>
             <p>
-              I have built many projects in PHP, especially in the past. I worked with plain PHP&nbsp;7 (OOP) and later also
-              with the <strong>Symfony</strong> framework and <strong>Twig</strong> template engine.
+              I have built many projects in PHP, especially in the past. I worked with plain PHP (OOP) and later also
+              with the <strong>Symfony</strong> framework and <strong>Twig</strong> template engine. Some of my projects have
+              used the <strong>Nette</strong> framework as well.
             </p>
           </SkillRow>
           <SkillRow skill="Python" percentage={70}>
@@ -59,8 +60,8 @@ const Home: React.FC = () => (
           </SkillRow>
           <SkillRow skill="Bash" percentage={80}>
             <p>
-              I have over 10 years of experience working with various Linux distributions. I have also contributed to managing
-              Linux servers on smaller projects and have written deployment scripts in Bash.
+              I have over 12 years of experience working with various Linux distributions. I have also contributed to managing
+              Linux servers on smaller projects, written complex deployment scripts and taught Bash scripting to students at the university.
             </p>
           </SkillRow>
           <SkillRow skill="SQL" percentage={95}>
@@ -86,6 +87,18 @@ const Home: React.FC = () => (
             </p>
             <p className="mt-2">
               <FileButton type="web" href="https://recordica.app">Recordica.app</FileButton>
+            </p>
+          </ProjectRow>
+          <ProjectRow name="Offline weather forecast">
+            <p>
+              A weather forecaster (PWA) that predicts precipitation and wind for the next 6 hours from observations
+              anyone can make with just a smartphone – no internet connection or specialized devices needed.
+              The prediction models (XGBoost) are trained on a multi-year dataset I collected from MET Norway.
+            </p>
+            <p className="mt-2">
+              <FileButton type="github" href="https://github.com/pesout/offline-weather-forecast" gap>GitHub</FileButton>
+              <FileButton href="https://github.com/pesout/weather-dataset" gap>Weather dataset</FileButton>
+              <FileButton type="web" href="https://weather.pesout.net">Demo</FileButton>
             </p>
           </ProjectRow>
           <ProjectRow name="Machine learning models to reduce the risks of psychedelics use">
@@ -173,6 +186,27 @@ const Home: React.FC = () => (
           applications for various companies and some projects are still in progress.
         </p>
         <div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <ProjectRow name={(<img src="/images/elevaite_logo.png" alt="Elevaite logo" className="w-[6.4rem] mt-0.5" />)}>
+            <p>
+              Much of my energy goes into startup projects at <strong>Elevaite</strong>.
+              Alongside that, we help companies automate their workflows with AI and build custom
+              software tailored to their business needs.
+            </p>
+            <p className="mt-2">
+              <FileButton type="web" href="https://elevaite.eu" color="emerald">Elevaite.eu</FileButton>
+            </p>
+          </ProjectRow>
+          <ProjectRow name="BrandCloud" color="emerald">
+            <p>
+              One of my most recent engagements is with BrandCloud,
+              where I help guide the technical direction of the in-house dev team.
+              We continue developing the DAM solution originally built and maintained by an external vendor.
+            </p>
+            <p className="mt-2">
+              <FileButton type="web" href="https://www.brandcloud.pro/en" color="emerald">BrandCloud.pro</FileButton>
+            </p>
+          </ProjectRow>
           <ProjectRow name="Robe websites" color="emerald">
             <p>
               I have worked on this project as part of a team at <ExtLink href="https://appio.dev/en" color="emerald">Appio</ExtLink>,
